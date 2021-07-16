@@ -8,3 +8,11 @@ def bookstore_book(request):
         'bookstore_list' :book
     }
     return render(request, "bookstore_list.html", context)
+
+def shopping_cart(request):
+    context = {}
+    return render(request, 'shopping_cart.html', context)
+
+def checkout(request):
+    context = {}
+    return render(request, 'shopping_cart.html', context)

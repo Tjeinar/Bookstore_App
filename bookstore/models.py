@@ -16,3 +16,18 @@ class Book(models.Model):
     
     def __str__(self):
         return self.title
+
+class OrderItem(models.Model):
+    item = models.ForeignKey(Book, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+
+class Order(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    items = models.ManyToManyField(OrderItem)
+    date_ordered = models.DateTimeField(default=timezone.now)
+    ordered = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.user.username

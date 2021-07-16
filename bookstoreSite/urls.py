@@ -18,12 +18,14 @@ from django.urls import path
 from bookstore.views import bookstore_book
 from django.conf import settings
 from django.conf.urls.static import static
+from bookstore import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('books/', bookstore_book ),
+    path('index/', bookstore_book, name='index'),
     path('', bookstore_book ),
+    path('shopping_cart/', views.shopping_cart, name='shopping_cart'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #if settings.DEBUG:
