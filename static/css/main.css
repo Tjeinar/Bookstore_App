@@ -1,4 +1,8 @@
-
+/* Breadcrumb */
+.breadcrumb-item a{
+    color:black;
+    border-bottom: 1px solid black;
+}
 
 
 /* Card styling */
@@ -8,7 +12,12 @@
 .card-img-top, .card-title:hover,#card-author:hover  {
     cursor:pointer;
 }
-
+.card-body a{
+    color:black;
+}
+.card-body a:hover{
+    color:black;
+}
 #card-price {
     font-weight:bold;
     color:#DD1768;
@@ -23,6 +32,17 @@ a {
     color:black;
     text-decoration: none !important;
 }
+
+/* product_details  */
+.product-info ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.price-tag {
+    color: #DD1768;
+}
+
 
 /*.card-img-top {
     height: 20vw;
@@ -44,5 +64,7 @@ a {
     background-color: #232F3E;
 }
 
-
+.navbar-custom li:hover {
+    text-decoration: underline;
+}
 
