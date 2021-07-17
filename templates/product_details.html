@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Bookstore | Shopping cart {% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-sm">
+            <!-- Breadcrumb-->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Hjem</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">HANDLEKURV</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-sm one">
+                <div class="card mb-3" style="max-width: 1400px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">{{product.title}}</h3>
+                                <h5  class="card-title">{{product.author}}</h5>
+                                <p class="card-text">{{product.description}}</p>
+                                <h5 class="card-text">{{product.price}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Test">
+                Product details
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

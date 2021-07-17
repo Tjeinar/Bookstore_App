@@ -22,14 +22,17 @@
             {% for list in bookstore_list %}
             <div class = "col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2  d-flex">
                 <!-- Product Card -->
+                
                 <div class="card text-center mt-4 border-0">
+                    <a class ="product-details" href="{% url 'product_details' list.id %}">
                     <div class="img-container">
                         <img class="card-img-top" src="{{ list.image.url }}"  alt="Book cover image">
                         <!--<img class="card-img-top mx-auto d-block" style="max-width: 100%; max-height: 100%;object-fit: scale-down" src="{{ list.image.url }}"  height="308px" alt="Card image cap">-->
                     </div>
+                    </a>
                     <div class="card-body  d-flex flex-column justify-content-between">
                         <!-- h-100 makes title take up 100% space regardless-->
-                        <p class="card-title mt-1 h-100"><b>{{list.title}}</b></hp>
+                        <p class="card-title mt-1 h-100"><b>{{list.title}}</b></p></a>
                         <p class="card-text" id="card-author">{{list.author}}</p>
                         <!-- mt-auto pushes "price"" all the way down in the box-->
                         <p class="card-text mt-auto" id="card-price">{{list.price}}</p>

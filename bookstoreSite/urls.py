@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from bookstore.views import bookstore_book
+from bookstore.views import product, product_details # not needed
 from django.conf import settings
 from django.conf.urls.static import static
 from bookstore import views
@@ -23,8 +23,9 @@ from bookstore import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', bookstore_book, name='index'),
-    path('', bookstore_book ),
+    path('index/', views.product, name='index'),
+    path('', views.product ),
+    path('product/<int:id>', views.product_details, name='product_details'),
     path('shopping_cart/', views.shopping_cart, name='shopping_cart'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
